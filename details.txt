@@ -1,0 +1,23 @@
+Hi Aakash here, i just built a login and registration system which can register,login 
+and search your forgot password or username.
+
+On running the source code, the compiler asks for the choice.
+1.login
+2.registration
+3.forgot your username or password
+4.exit
+
+*it has 5 void functions such as: 
+1.login();  //when you enter choice =1 and enter username and password. it searches for the entered username
+              and password in the external text file and gives successful result when both are present in  
+              as key value pairs
+2.regstr();  //when you enter choice =2 and enter username and password. it 
+              registers the username and password in the external text file
+3.forgot(); //when you enter choice =3, it asks for 
+             1.forgot your username 
+             2.forgot your password
+4.forgotbyusername();  //asks for password and searches for username and returns it
+5.forgotbypassword();  //asks for username and searches for password and returns it 
+
+
+---------------------------------------------------------Thank you---------------------------------------------------------
