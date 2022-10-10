@@ -17,9 +17,11 @@ input.open("database.txt");
          while(input>>u>>p) {
              
            if(u==user &&p==pass){
-                 count=1;
+                 count=1; 
+               break;
              } 
-              if(count==1){ 
+         }
+    if(count==1){ 
                   
             printf("\n------------------------------------Login success!--------------------------------------------------");
             cout<<"\nwelcome "<<user<<"!"<<endl;
@@ -29,7 +31,7 @@ input.open("database.txt");
            
             printf("\n------------------------------------login failed!--------------------------------------------------\n"); 
             
-        }
+        
          } 
 input.close() ; 
 
@@ -42,7 +44,7 @@ void registr(){
         cout<<"PASSWORD :"<<endl;
         cin>>pass; 
         ofstream output;
-        output.open("database.txt");  
+        output.open("database.txt",ios::app);  
         
         output<<user<<x<<pass<<y;   
      
@@ -51,7 +53,7 @@ void registr(){
         cout<<"Registration successful!"<<endl;
 }
 void forgotbyusername(){   
-        string password,user,pass;
+        string password,user,pass,user1;
         cout<<"\nEnter your password:\n"; 
         cin>>password;
         bool found=false; 
@@ -60,21 +62,24 @@ void forgotbyusername(){
         in.open("database.txt");
         while(in>>user>>pass){
             if(pass==password){
-                found=true;
-            } 
+                found=true;   
+                user1=user;
+                break;
+            }  
+        }
             if(found==true){ 
                
-                cout<<"Your username is: "<<user<<endl;
+                cout<<"Your username is: "<<user1<<endl;
             }
             else{ 
                
                 cout<<"Your password did not matched the records!"<<endl;
             }
-        }  
+          
         in.close();
     } 
 void forgotbypassword(){   
-        string username,user,pass;
+        string username,user,pass,pass1;
         cout<<"\nEnter your username:\n"; 
         cin>>username;
         bool found=false; 
@@ -83,17 +88,20 @@ void forgotbypassword(){
         in.open("database.txt");
         while(in>>user>>pass){
             if(user==username){
-                found=true;
-            } 
+                found=true; 
+                pass1=pass; 
+               break;     
+            }  
+        }
             if(found==true){ 
             
-                cout<<"Your password is: "<<pass<<endl;
+                cout<<"Your password is: "<<pass1<<endl;
             }
             else{ 
                
                 cout<<"Your username did not matched the records!"<<endl;
             }
-        }  
+         
         in.close();
     }
 void forgot(){ 
